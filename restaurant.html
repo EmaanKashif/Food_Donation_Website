@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head> 
+    <title>Restaurants</title>
+    <link rel='stylesheet' href={{url_for('static',filename='restaurant-style.css')}}>
+</head>
+<body>
+    <h1>Available Restaurants</h1>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Food_Available</th>
+            <th>Pickup_Time</th>
+        </tr>
+        {% for r in restaurant %}
+        <tr>
+            <td>{{ r[0]}}</td>
+            <td>{{ r[1]}}</td>
+            <td>{{ r[2] }}</td>
+            <td>{{ r[3]}}</td>
+            <td>{{ r[4]}}</td>
+        </tr>
+        {%endfor%}
+   </table>
+</body>
+</html> 
+

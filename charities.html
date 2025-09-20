@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Charities</title>
+    <link rel='stylesheet' href={{url_for ('static',filename='charity_style.css')}}>
+</head>
+<body>
+    <h1>Charities Centres</h1>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Food_Requirement</th>
+            <th>Location</th>
+        </tr>
+        {% for c in charities %}
+        <tr>
+            <td>{{ c[0]}}</td>
+            <td>{{ c[1]}}</td>
+            <td>{{ c[2] }}</td>
+            <td>{{ c[3]}}</td>
+        </tr>
+        {%endfor%}
+   </table>
+</body>
+</html>

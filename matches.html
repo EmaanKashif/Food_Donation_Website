@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Matches</title>
+    <link rel='stylesheet' href={{url_for('static',filename='match_style.css')}}>
+</head>
+<body>
+    <h1>Matching Donations</h1>
+    <p class="intro">Here you can see how surplus food from restaurants is matched with the requirements of charities. 
+        This ensures that no food goes to waste and reaches those in need.</p>
+
+    {% for m in matches %}
+    <div class="match-card">
+        <p><span class="charity">{{ m[3] }}</span> must pick <span class="food">{{ m[1] }}</span> 
+           from <span class="restaurant">{{ m[0] }}</span> before <b>{{ m[2] }}</b>.
+        </p>
+        <p><span>Location: {{ m[5] }}</span></p>
+    </div>
+    
+    {% endfor %}
+</body>
+</html>
